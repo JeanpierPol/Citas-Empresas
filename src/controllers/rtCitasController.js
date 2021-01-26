@@ -5,7 +5,7 @@ rtCitasCtrl.renderCitasForm = (req, res) => {
 };
 
 rtCitasCtrl.CreateNewCita = (req, res) => {
-    console.log(req.body)
+    const CitasSchema = req.body;
     res.send('Crear nota');
 };
 
