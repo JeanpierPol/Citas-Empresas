@@ -1,0 +1,44 @@
+<!-- CUERPO DEL EJERCICIO -->
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form class="row g-3 needs-validation" action="/citas/edit/{{cita._id}}?_method=PUT" method="POST">
+                <input type="hidden" name="_method" value="PUT">
+                    <div class="col-lg-4">
+                        <label for="validationCustom01" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="validationCustom01" name="cName" required value="{{cita.cName}}">
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="validationCustom02" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="validationCustom02" name="cLastName" required value="{{cita.cLastName}}">
+                    </div>
+                    <div class="col-lg-4">
+                        <label for="validationCustomUsername" class="form-label" >Email</label>
+                        <div class="input-group has-validation">
+                            <span class="input-group-text" id="inputGroupPrepend">@</span>
+                            <input type="email" class="form-control" id="validationCustomUsername"
+                                aria-describedby="inputGroupPrepend" name="cEmail" required value="{{cita.cEmail}}">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="validationCustom03" class="form-label">Teléfono</label>
+                        <input type="number" class="form-control" id="validationCustom03" name="cPhone" required value="{{cita.cPhone}}">
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="validationCustom03" class="form-label">Seleccione su fecha</label>
+                        <input type="date" class="form-control" name="cDate" min="2020-12-26" max="2022-12-26"
+                            required value="{{cita.cDate}}">
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="validationCustom03" class="form-label">Seleccione su hora</label>
+                        <input type="time" id="start" class="form-control" name="cTime" value="{{cita.cTime}}">
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Modificar Cita</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>

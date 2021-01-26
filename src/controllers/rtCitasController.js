@@ -18,12 +18,15 @@ rtCitasCtrl.renderCitas = async (req, res) => {
     res.render('citas/all-citas', {citas});
 };
 
-rtCitasCtrl.renderEditForm =(req, res) =>{
-    res.send('render');
+rtCitasCtrl.renderEditForm = async (req, res) =>{
+    const cita = await Citas.findById(req.params.id).lean();
+    res.render('citas/edit-cita', { cita });
 };
 
-rtCitasCtrl.updateCita = (req, res) => {
-    res.send('editas');
+rtCitasCtrl.updateCita = async (req, res) => {
+    const {cName, cLastName, cEmail, cPhone, cDate, cTime} = req.body;
+    await Citas.findByIdAndUpdate(req.params.id, {cName, cLastName, cEmail, cPhone, cDate, cTime}).lean();
+    res.redirect('/citas');
 };
 
 rtCitasCtrl.deleteCita = async (req, res) =>{

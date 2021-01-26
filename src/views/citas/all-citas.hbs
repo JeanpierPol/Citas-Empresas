@@ -8,7 +8,7 @@
             <div class="card-body">
                 <p class="card-text">A Sr {{cName}} {{cLastName}} ha solicitado su cita para el dia {{cDate}} su
                     identificacion es {{_id}}</p>
-                <button href="/citas/edit/{{_id}}" class="btn btn-primary">Editar cita</button>
+                <a href="/citas/edit/{{_id}}" class="btn btn-primary" metho>Editar cita</a>
                 <form action="/citas/delete/{{_id}}?_method=DELETE" method="POST">
                 <input type="hidden" name="_method" value="DELETE">
                     <button type="submit" class="btn btn-danger">
