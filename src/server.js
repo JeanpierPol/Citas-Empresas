@@ -23,7 +23,9 @@ app.use(express.urlencoded({extended:false}));
 //Global variables 
 
 //Routes
-app.use(require(`./routes/rtMain`));
+app.use(require('./routes/rtMain'));
+app.use(require('./routes/rtCitas'));
+
 //static files
 app.use(express.static(patch.join( __dirname + 'public')));
 

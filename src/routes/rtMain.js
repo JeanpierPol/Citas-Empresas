@@ -1,11 +1,9 @@
 const { Router } = require('express')
 const router = Router();
 
-const { renderIndex, renderNewCita, renderCalendar } = require('../controllers/ctrP')
+const { renderIndex, renderNewCita, renderCalendar } = require('../controllers/rtMainController')
 
 router.get('/', renderIndex);
-
-router.get('/add-cita', renderNewCita);
 
 router.get('/calendario', renderCalendar);
 
