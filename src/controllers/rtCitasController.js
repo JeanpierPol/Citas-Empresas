@@ -1,16 +1,21 @@
 const rtCitasCtrl = {};
 
+const Citas = require('../models/Citas')
+
 rtCitasCtrl.renderCitasForm = (req, res) => {
     res.render('citas/new-cita')
 };
 
-rtCitasCtrl.CreateNewCita = (req, res) => {
-    const CitasSchema = req.body;
+rtCitasCtrl.CreateNewCita = async (req, res) => {
+    const {cName,cLastName,cPhone,cEmail,cDate,cTime} = req.body;
+    const newCita = new Citas({cName,cLastName,cPhone,cEmail,cDate,cTime})
+    await newCita.save();
     res.send('Crear nota');
 };
 
-rtCitasCtrl.renderCitas = (req, res) => {
-    res.send('render citas');
+rtCitasCtrl.renderCitas = async (req, res) => {
+    const citas = await Citas.find().lean();
+    res.render('citas/all-citas', {citas});
 };
 
 rtCitasCtrl.renderEditForm =(req, res) =>{

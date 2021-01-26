@@ -1,0 +1,19 @@
+<div class="row">
+    {{#each citas}}
+    <div class="col-md-12 my-2">
+        <div class="card">
+            <div class="card-header">
+                Datos de la cita
+            </div>
+            <div class="card-body">
+                <p class="card-text">A Sr {{cName}} {{cLastName}} ha solicitado su cita para el dia {{cDate}} su
+                    identificacion es {{_id}}</p>
+                <form action="/citas/delete/{{_id}}" method="POST">
+                    <button href="/citas/edit/{{_id}}" class="btn btn-primary">Editar cita</button>
+                    <button type="submit" class="btn btn-danger">Eliminar Cita</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
