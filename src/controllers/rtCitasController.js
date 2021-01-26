@@ -1,10 +1,11 @@
 const rtCitasCtrl = {};
 
 rtCitasCtrl.renderCitasForm = (req, res) => {
-    res.send('nota añadida');
+    res.render('citas/new-cita')
 };
 
 rtCitasCtrl.CreateNewCita = (req, res) => {
+    console.log(req.body)
     res.send('Crear nota');
 };
 

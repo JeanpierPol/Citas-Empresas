@@ -7,7 +7,7 @@ const rtCitasCtrl = require('../controllers/rtCitasController')
 //new Cita
 router.get('/citas/add', rtCitasCtrl.renderCitasForm);
 
-router.post('/citas/add', rtCitasCtrl.CreateNewCita);
+router.post('/citas/new-cita', rtCitasCtrl.CreateNewCita);
 
 //Get All citas
 router.get('/citas', rtCitasCtrl.renderCitas)
