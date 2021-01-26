@@ -10,7 +10,7 @@ rtCitasCtrl.CreateNewCita = async (req, res) => {
     const {cName,cLastName,cPhone,cEmail,cDate,cTime} = req.body;
     const newCita = new Citas({cName,cLastName,cPhone,cEmail,cDate,cTime})
     await newCita.save();
-    res.send('Crear nota');
+    res.redirect('/citas');
 };
 
 rtCitasCtrl.renderCitas = async (req, res) => {
@@ -26,8 +26,9 @@ rtCitasCtrl.updateCita = (req, res) => {
     res.send('editas');
 };
 
-rtCitasCtrl.deleteCita = (req, res) =>{
-    res.send('deleteCita')
+rtCitasCtrl.deleteCita = async (req, res) =>{
+    await Citas.findByIdAndDelete(req.params.id);
+    res.redirect('/citas');
 }
 
 module.exports = rtCitasCtrl;
