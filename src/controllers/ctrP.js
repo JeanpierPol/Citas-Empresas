@@ -9,7 +9,7 @@ ctrP.renderCalendar = (req, res) => {
 };
 
 ctrP.renderNewCita = (req, res) => {
-    res.render('app-cita')
+    res.render('add-cita')
 }
 
 module.exports = ctrP;

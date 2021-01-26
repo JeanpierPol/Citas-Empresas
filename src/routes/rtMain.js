@@ -5,7 +5,7 @@ const { renderIndex, renderNewCita, renderCalendar } = require('../controllers/c
 
 router.get('/', renderIndex);
 
-router.get('/app-cita', renderNewCita);
+router.get('/add-cita', renderNewCita);
 
 router.get('/calendario', renderCalendar);
 
