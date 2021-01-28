@@ -1,23 +1,22 @@
-const { Router } = require('express');
-const router = Router();
+const express = require('express');
+const rtCitas = express.Router();
 
 const rtCitasCtrl = require('../controllers/rtCitasController')
 
-
 //new Cita
-router.get('/citas/add', rtCitasCtrl.renderCitasForm);
+rtCitas.get('/citas/add', rtCitasCtrl.renderCitasForm);
 
-router.post('/citas/new-cita', rtCitasCtrl.CreateNewCita);
+rtCitas.post('/citas/new-cita', rtCitasCtrl.CreateNewCita);
 
 //Get All citas
-router.get('/citas', rtCitasCtrl.renderCitas)
+rtCitas.get('/citas', rtCitasCtrl.renderCitas)
 
 //Edit citas
-router.get('/citas/edit/:id', rtCitasCtrl.renderEditForm)
+rtCitas.get('/citas/edit/:id', rtCitasCtrl.renderEditForm)
 
-router.put('/citas/edit/:id', rtCitasCtrl.updateCita)
+rtCitas.put('/citas/edit/:id', rtCitasCtrl.updateCita)
 
 //Delete Cita
-router.delete('/citas/delete/:id', rtCitasCtrl.deleteCita)
+rtCitas.delete('/citas/delete/:id', rtCitasCtrl.deleteCita)
 
-module.exports = router
+module.exports = rtCitas

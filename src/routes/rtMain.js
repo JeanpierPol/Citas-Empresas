@@ -1,11 +1,11 @@
-const { Router } = require('express')
-const router = Router();
+const express = require('express')
+const rtMain = express.Router();
 
 const rtMainController = require('../controllers/rtMainController')
 
-router.get('/', rtMainController.renderIndex);
+rtMain.get('/', rtMainController.renderIndex);
 
-router.get('/calendario', rtMainController.renderCalendar);
+rtMain.get('/calendario', rtMainController.renderCalendar);
 
  
-module.exports = router;
+module.exports = rtMain;
