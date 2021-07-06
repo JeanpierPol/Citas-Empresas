@@ -1,5 +1,5 @@
 require('dotenv').config();
-
+console.log("asdasd")
 const app = require('./server')
 require('./database');
 
